@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Characters</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">
+            <img src="img/buttons/home_button.png" alt="Home">
+        </a>
+
+        <a href="maps.html">
+            <img src="img/buttons/maps_button.png" alt="Maps">
+        </a>
+
+        <a href="tables.html">
+            <img src="img/buttons/tables_button.png" alt="NPC Tables">
+        </a>
+
+        <a href="lore.html">
+            <img src="img/buttons/lore_button.png" alt="Lore">
+        </a>
+
+        <a href="character_maker.html">
+            <img src="img/buttons/character_button.png" alt="">
+        </a>
+    </nav>
+
+    <p class="intro">
+        This section, and the final section of this site is a simple form that you can
+        fill out to keep track of a player character in your D&amp;D game. This feature is great for both
+        the players and the DM, as the players can use it to keep track of their character, or the DM can
+        keep track of everyone elses player.
+    </p>
+
+    <div style="margin: auto; width: 50%;">
+        <form action="character_made.html" method="post">
+            <p>
+                <label for="name">Character Name:</label>
+                <input type="text" name="character_name" id="name">
+            </p>
+
+            <p>
+                <label for="race">Race:</label>
+                <select name="race" id="race">
+                    <option value="">--Select a Race--</option>
+                    <option value="human">Human</option>
+                    <option value="elf">Elf</option>
+                    <option value="dwarf">Dwarf</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="class">Class:</label>
+                <input type="text" name="class" id="class">
+            </p>
+
+            <p>
+                <input type="hidden" name="level" value="1">
+            </p>
+
+            <fieldset style="margin-bottom: 16px;">
+                <legend>Skills</legend>
+                <p>
+                    <input type="checkbox" name="acrobatics" id="acrobatics">
+                    <label for="acrobatics">Acrobatics</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="animal_handling" id="animal_handling">
+                    <label for="animal_handling">Animal Handling</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="arcana" id="arcana">
+                    <label for="arcana">Arcana</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="athletics" id="athletics">
+                    <label for="athletics">Athletics</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="deception" id="deception">
+                    <label for="deception">Deception</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="history" id="history">
+                    <label for="history">History</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="insight" id="insight">
+                    <label for="insight">Insight</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="intimidation" id="intimidation">
+                    <label for="intimidation">Intimidation</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="investigation" id="investigation">
+                    <label for="investigation">Investigation</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="medicine" id="medicine">
+                    <label for="medicine">Medicine</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="nature" id="nature">
+                    <label for="nature">Nature</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="perception" id="perception">
+                    <label for="perception">Perception</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="performance" id="performance">
+                    <label for="performance">Performance</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="persuasion" id="persuasion">
+                    <label for="persuasion">Persuasion</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="religion" id="religion">
+                    <label for="religion">Religion</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="sleight_of_hand" id="sleight_of_hand">
+                    <label for="sleight_of_hand">Sleight of Hand</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="stealth" id="stealth">
+                    <label for="stealth">Stealth</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="survival" id="survival">
+                    <label for="survival">Survival</label>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Alignment</legend>
+                <p>
+                    <input type="radio" name="alignment" id="lg">
+                    <label for="lg">Lawful Good</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="ln">
+                    <label for="ln">Lawful Neutral</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="le">
+                    <label for="le">Lawful Evil</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="ng">
+                    <label for="ng">Neutral Good</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="nn">
+                    <label for="nn">Neutral Neutral</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="ne">
+                    <label for="ne">Neutral Evil</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="cg">
+                    <label for="cg">Chaotic Good</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="cn">
+                    <label for="cn">Chaotic Neutral</label>
+                </p>
+                <p>
+                    <input type="radio" name="alignment" id="ce">
+                    <label for="ce">Chaotic Evil</label>
+                </p>
+                
+            </fieldset>
+
+            <p>
+                <label for="backstory">Backstory:<br></label>
+                <textarea name="backstory" id="backstory" cols="30" rows="10" placeholder="Write your character's backstory here."></textarea>
+            </p>
+
+            <p>
+                <label for="character_password">Character Password:</label>
+                <input type="password" name="character_password" id="character_password">
+                <label for="">*Used to access characters from the database once we learn that.</label>
+            </p>
+            
+            <p>
+                <input type="reset" value="Clear">
+                <input type="submit" value="Submit" style="float: right;">
+            </p>
+        </form>
+    </div>
+</body>
+</html>

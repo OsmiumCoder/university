@@ -1,0 +1,68 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    background-color: tan;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    background-color: black;
+    font-size: 16pt;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+nav ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0px;
+}
+
+nav ol li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ol li:hover {
+    background-color: firebrick;
+}
+
+nav ol li a {
+    text-decoration: none;
+    color: gainsboro;
+}
+nav ol .right {
+    float: right;
+}
+
+.signupform, .loginform {
+    margin: auto;
+    width: 75%;
+    text-align: center;
+}
+
+.wrapper {
+    margin: auto;
+    margin-top: 30px;
+    width: 50%;
+}
+
+
+.character_list a {
+    text-decoration: none;
+    color: gainsboro;
+    padding: 10px;
+    display: block;
+}
+
+.character_list p {
+    background-color: black;
+    width: 100%;
+}
+
+.character_list p:hover {
+    background-color: firebrick; 
+}

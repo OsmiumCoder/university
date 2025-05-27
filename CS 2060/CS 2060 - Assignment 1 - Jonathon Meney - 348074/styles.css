@@ -1,0 +1,29 @@
+html {
+    zoom: 80%;
+    background-color: bisque;
+}
+
+nav {
+    text-align: center;
+    margin: 8px;
+}
+
+header {
+    background-color: black;
+    text-align: center;
+    color: red;
+    padding: 10px;
+}
+
+nav a, img a {
+    text-decoration: none;
+}
+
+.intro {
+    margin: auto;
+    width: 50%;
+    max-width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ASCII Character set to pay tribute to old style graphics. -->
+    <meta charset="ISO-8859-1"> 
+    <title>ASCII Turtle!</title>
+    <script src="scripts/script.js"></script>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+        }
+        #boardTable {
+            font-weight: bold;
+            background-color: lightgray;
+            border: 10px double black;
+        }
+    </style>
+</head>
+<body style="background-color: tan;">
+    <header style="text-align: center;">
+        <h1>Turtle Board Game/Drawer</h1>
+        <h2>Symbols</h2>
+        <p>
+            ?: Unvisited location. <br>
+            *: Visited location. <br>
+            @: Turtle/Pen. Refer to controls below to move.
+        </p>
+
+        <h2>Controls</h2>
+        <p>
+            Use W, A, S, and D to move the Turtle. <br>
+            W: Move up. <br>
+            A: Move left. <br>
+            S: Move down. <br>
+            D: Move right. <br>
+            Use P to raise or lower pen. The pen is up by default.<br>
+        </p>
+    </header>
+
+    <div style="margin: auto; width: 50%; text-align: center;">
+        <h4 style="margin: 0px;">Board Size (default 50)</h4>
+        <form name="sizeSelector" style="margin-bottom: 20px;">
+            <input type="radio" name="boardSize" id="twenty" value="20">
+            <label for="twenty">20</label>
+
+            <input type="radio" name="boardSize" id="thirtyFive" value="35">
+            <label for="thirtyFive">35</label>
+
+            <input type="radio" name="boardSize" id="fifty" value="50">
+            <label for="fifty">50</label>
+
+            <input type="radio" name="boardSize" id="hundred" value="100">
+            <label for="hundred">100</label>
+            
+            <br>
+            <input type="button" value="New Board" onclick="makeBoard()" style="font-size: 12px; font-family: 'Courier New', Courier, monospace;">
+        </form>
+    </div>
+
+    <div id="boardDiv" style="margin: auto; width: 100%; text-align: center;">
+        <table id="boardTable" style="margin: auto;"></table>
+    </div>
+
+    
+</body>
+</html>
