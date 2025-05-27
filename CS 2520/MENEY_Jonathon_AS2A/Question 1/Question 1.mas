@@ -1,0 +1,52 @@
+			ORG 100
+
+			/ reset inner loop every outer loop iteration
+OuterLoop,		LOAD ZERO
+			STORE InnerLoopCounter
+
+			/ get next X 
+			LOAD OuterLoopCounter
+			ADD FIVE
+			STORE OuterLoopCounter
+
+			/ check if we have passed 65, in which case end
+			SUBT SIXTYSIX
+			SKIPCOND 000
+			JUMP Out
+
+			/ get next Y
+InnerLoop,		LOAD InnerLoopCounter
+			ADD ONE
+			STORE InnerLoopCounter
+
+			/ check if we have passed 5, in which case move to the next iteration of the outer loop
+			SUBT SIX
+			SKIPCOND 000
+			JUMP OuterLoop
+			
+			/ add X + Y and output
+			LOAD OuterLoopCounter
+			ADD InnerLoopCounter
+			OUTPUT
+
+			/ add to grand total
+			ADD Sum
+			STORE Sum
+			JUMP InnerLoop
+
+			/ output grand total
+Out,			LOAD Sum
+			OUTPUT
+			HALT
+
+/ CONSTANTS
+ZERO,			DEC 0
+ONE,			DEC 1
+FIVE,			DEC 5
+SIX,			DEC 6
+SIXTYSIX,		DEC 66
+
+/ Variables
+OuterLoopCounter,	DEC 0
+InnerLoopCounter,	DEC 0
+Sum,			DEC 0

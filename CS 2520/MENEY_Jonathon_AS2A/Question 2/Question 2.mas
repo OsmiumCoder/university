@@ -1,0 +1,94 @@
+			ORG 100
+
+			/ reset innerloop so that first iteration of it will be 0
+OuterLoop,		LOAD NEGATIVEONE
+			STORE InnerLoopCounter
+
+			/ get next X
+			LOAD OuterLoopCounter
+			ADD ONE
+			STORE OuterLoopCounter
+
+			/ check if outerloop has reached fifteen, if so were done
+			SUBT FIFTEEN
+			SKIPCOND 000
+			JUMP Done
+
+			/ get next Y
+InnerLoop,		LOAD InnerLoopCounter
+			ADD ONE
+			STORE InnerLoopCounter
+
+			/ check if innerloop has reached four, if so jump to next outerloop iteration
+			SUBT FOUR
+			SKIPCOND 000
+			JUMP OuterLoop
+
+			
+			LOAD OuterLoopCounter
+			STORE FirstValue
+			LOAD InnerLoopCounter
+			STORE SecondValue
+			JnS glados
+
+
+			LOAD ReturnValue
+			OUTPUT
+			JUMP InnerLoop
+
+glados,			HEX 000
+
+			/ reset return
+			LOAD ZERO
+			STORE ReturnValue
+			
+			/ subtract four from first parameter
+			LOAD FirstValue
+			SUBT FOUR
+			STORE FirstValue
+
+			/ MULTIPLY LOOP
+			/ use second value as counter if it reaches zero end multiply
+Loop, 			LOAD SecondValue
+			SKIPCOND 800
+			JUMP LoopEnd
+
+			/ add the first - 7 every loop
+			LOAD ReturnValue
+			ADD FirstValue
+			STORE ReturnValue
+
+			/ update counter
+			LOAD SecondValue
+			SUBT ONE
+			STORE SecondValue
+			JUMP Loop
+
+			/ subtract seven and return/jump back
+LoopEnd, 		LOAD ReturnValue
+			SUBT SEVEN
+			STORE ReturnValue
+			JUMPI glados
+
+/ glados data section
+FirstValue, 		DEC 0
+SecondValue, 		DEC 0
+ReturnValue, 		DEC 0
+
+Done,			HALT
+
+
+/ CONSTANTS
+NEGATIVEONE,		DEC -1
+ZERO, 			DEC 0
+ONE,			DEC 1
+FOUR, 			DEC 4
+SEVEN, 			DEC 7
+FIFTEEN, 		DEC 15
+
+
+/ Variables
+OuterLoopCounter,	DEC 4
+InnerLoopCounter,	DEC -1
+
+

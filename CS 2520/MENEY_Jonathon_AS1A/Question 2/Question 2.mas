@@ -1,0 +1,88 @@
+		ORG 100
+		
+		/ load the address of start 
+		/ and store the address in current
+		/ to track what number in the seq we're at
+		LOADA Start
+		STORE Current
+
+		/ store the address of the first two values in the seq
+		/ used for n-3 and n-2 in reccurenc relation
+		LOADA Seq
+		STORE NMinusThree
+		ADD ONE
+		STORE NMinusTwo
+		
+		/ output n = 0 and n = 1 of seq
+		LOADI NMinusThree
+		OUTPUT
+		LOADI NMinusTwo
+		OUTPUT
+		
+		/ output n = 2 of seq
+		LOAD NMinusTwo
+		ADD ONE
+		STORE Temp
+		LOADI Temp
+		OUTPUT
+
+/ loops 7 times to calculate the remaining 7 numbers in the sequence
+Loop,		LOAD N
+		SUBT Counter
+		SKIPCOND 800 / greater than 0
+		JUMP Done
+	
+		LOAD Counter
+		ADD ONE
+		STORE Counter
+
+		JnS GordSub / jumb to subroutine to calculate next num in sequence
+		JUMP Loop
+
+GordSub, 	HEX 000 / to store return address
+		CLEAR
+		
+		/ load n-3 and add n-2
+		/ output and store
+		LOADI NMinusThree
+		ADDI NMinusTwo
+		OUTPUT
+		STOREI Current
+
+		/ n-2 becomes n-3 for next value
+		LOAD NMinusTwo
+		STORE NMinusThree
+
+		/ increase address by 1 for new n-2
+		ADD ONE
+		STORE NMinusTwo
+		
+		/ increase storing adress by one
+		LOAD Current
+		ADD ONE
+		STORE Current
+
+		JUMPI GordSub / jump back to loop
+		
+Done,		HALT
+
+NMinusThree, 	HEX 000
+NMinusTwo, 	HEX 000
+Temp,		HEX 000
+Current, 	HEX 000
+
+Counter, 	DEC 0
+N,		DEC 7
+
+ONE,		DEC 1
+
+Seq,		DEC 1 / first element of the sequence – element 0
+		DEC 3
+		DEC 1
+Start,		DEC 0 / where you start computing values
+		DEC 0
+		DEC 0
+		DEC 0
+		DEC 0
+		DEC 0
+		DEC 0 / storage for the last element of the sequence – e9

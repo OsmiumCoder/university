@@ -1,0 +1,20 @@
+		ORG 100		/ Program starts at location 0x100 in memory
+Ak,		Load		THURISAZ
+		Subt		WUNJO
+		Skipcond	400
+		Jump		Gifu
+Rad,		Load		THURISAZ
+		Add		THURISAZ
+		Store		THURISAZ
+		Jump		Wyn
+Gifu,		Load		WUNJO
+		Subt		THURISAZ
+		Store		WUNJO
+Wyn,		Load		THURISAZ
+		Output
+		Load		WUNJO
+		Output
+		Halt
+/ STUDENT ID FORMAT: NNNNNNN
+WUNJO,		Dec 		0348
+THURISAZ,	Dec 		074
